@@ -7,7 +7,7 @@ export const getPeliculas=async(req,res)=>{
     const [rows]=await pool.query("SELECT * FROM PELICULAS")
   res.json(rows)
   }catch(error){
-return res.status(500).json({
+    return res.status(500).json({
   message: 'No se concretó la consulta'
 })
 }
@@ -21,12 +21,12 @@ export const getPeliculaById=async(req,res)=>{
       message:'No existe pelicula con ese ID'
     })
   }
+  res.json(rows)
 }catch(error){
 return res.status(500).json({
   message: 'No se concretó la consulta'
 })
 }
-  res.json(rows)
   
 }
 
